@@ -36,6 +36,7 @@ node consumerCotizacion.js
 
 # Notas importantes
 
+- El topic seria como un channel, o una tabla de base de datos.
 - El productor y el consumidor se conectan al broker Kafka en localhost:9092.
 - El productor envía 1000 mensajes al topic 'cotizacion' cada segundo.
 - El consumidor muestra por consola cada mensaje recibido, incluyendo el valor y los headers.
@@ -45,5 +46,10 @@ node consumerCotizacion.js
 - Los mensajes tienen una clave. En el ejemplo es el ticker.
 - Hay particiones a nivel de topic. En el ejemplo se usan 2 particiones.
 - Si no se especifica cuando se crea el topic el numero de particiones, hay un numero definido por defecto.
+- Los topics se pueden borrar.
+- Si tengo varios consumidores de un topic, cada consumidor se conecta a una particion del topic.
+- Si tengo mas consumidores que particiones, los consumidores que no se conecten a una particion se quedan esperando mensajes.
+- Con un solo consumer este se conecta a todas las particiones del topic.
+
 
 
